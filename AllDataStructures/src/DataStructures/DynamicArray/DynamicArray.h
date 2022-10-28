@@ -34,8 +34,6 @@ namespace DS
         T* Find(T element);
 
 
-
-
         //O(1)
         T* End();
         size_t Size();
