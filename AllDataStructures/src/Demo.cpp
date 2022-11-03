@@ -2,22 +2,70 @@
 #include "Demo.h"
 #include"iostream"
 
-
 int main() 
 {
 	//DynamicArrayTest();
 
-	DoublyLinkedList();
+	//DoublyLinkedListTest();
 
+	QueueTest();
 
-
+	
 
 
 
 
 }
 
-void DoublyLinkedList()
+
+void QueueTest()
+{
+	DS::Queue<int> qq{};
+
+
+	std::cout << "IsEmpty: " << qq.Empty() << "\n\n";
+
+	qq.Enqueue(3);
+	qq.Enqueue(123);
+	qq.Enqueue(354);
+	qq.Enqueue(15);
+	qq.Enqueue(75);
+
+	qq.Print();
+
+
+	qq.Dequeue();
+	qq.Dequeue();
+	qq.Dequeue();
+
+	qq.Print();
+
+
+	std::cout << "ValueFront: " << qq.Front()<< "\n";
+	std::cout << "ValueBack: " << qq.Back() << "\n\n";
+
+	qq.Dequeue();
+	qq.Print();
+
+	std::cout << "ValueFront: " << qq.Front() << "\n";
+	std::cout << "ValueBack: " << qq.Back() << "\n\n";
+
+	std::cout << "QueueSize: " << qq.Size() << "\n\n";
+
+
+	qq.Enqueue(5);
+	qq.Dequeue();
+	qq.Enqueue(19);
+	qq.Enqueue(31);
+	qq.Enqueue(699);
+
+	qq.Print();
+
+	std::cout << "QueueSize: " << qq.Size() << "\n\n";
+
+}
+
+void DoublyLinkedListTest()
 {
 	DS::LinkedList<int> ll;
 	ll.Append(1);
