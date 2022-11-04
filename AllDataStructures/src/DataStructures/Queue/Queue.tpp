@@ -37,5 +37,5 @@
     template<typename T>
     inline void Queue<T>::Print()
     {
-       m_InternalDS.Print();
+       m_InternalDS.PrintForward();
     }

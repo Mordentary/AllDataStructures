@@ -1,22 +1,22 @@
 #pragma once
 #include"../LinkedList/LinkedList.h"
 
+
 namespace DS
 {
     template <typename T>
-    class Queue
+    class Stack
     {
 
     public:
-        Queue() = default;
-        ~Queue() = default;
+        Stack() = default;
+        ~Stack() = default;
 
         //O(1)
-        void Enqueue(T value);
-        void Dequeue();
+        void Pop();
+        void Push(T value);
 
-        T& Back();
-        T& Front();
+        T& Peek();
 
         uint32_t Size();
         bool Empty();
@@ -28,7 +28,6 @@ namespace DS
         LinkedList<T> m_InternalDS;
     };
 
-#include"Queue.tpp"
-
+#include"Stack.tpp"
 
 }

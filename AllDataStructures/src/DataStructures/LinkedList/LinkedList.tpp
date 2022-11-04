@@ -1,4 +1,23 @@
     template<typename T>
+    LinkedList<T>::~LinkedList()
+    {
+        Node<T>* curr = IterateForward();
+        Node<T>* next = IterateForward();
+        if (!curr) return;
+
+        while (next)
+        {
+            delete curr;
+            curr = next;
+            next = IterateForward();
+        }
+
+        delete curr;
+        ResetIterator();
+
+    }
+    
+    template<typename T>
     inline void LinkedList<T>::Append(T value)
     {
         m_Size += 1;
@@ -106,7 +125,7 @@
 
     }
     template<typename T>
-    inline void LinkedList<T>::Print()
+    inline void LinkedList<T>::PrintForward()
     {
 
         while (IterateForward())
@@ -117,6 +136,19 @@
         ResetIterator();
 
     }
+    template<typename T>
+    inline void LinkedList<T>::PrintBackward()
+    {
+
+        while (IterateBackward())
+        {
+            std::cout << ItrValue() << "\n";
+        }
+        std::cout << "\n";
+        ResetIterator();
+
+    }
+
     template<typename T>
     inline Node<T>* LinkedList<T>::IterateForward()
     {
@@ -148,7 +180,7 @@
     template<typename T>
     inline T LinkedList<T>::ItrValue()
     {
-
+        
         return this->m_Itr->m_Value;
 
     }

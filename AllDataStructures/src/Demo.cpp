@@ -4,19 +4,68 @@
 
 int main() 
 {
-	//DynamicArrayTest();
+	DynamicArrayTest();
 
-	//DoublyLinkedListTest();
+	DoublyLinkedListTest();
 
 	QueueTest();
 
+	StackTest();
 	
 
 
 
 
 }
+void StackTest()
+{
+	DS::Stack<int> stk{};
 
+
+	std::cout << "IsEmpty: " << stk.Empty() << "\n\n";
+
+	stk.Push(3);
+	stk.Push(123);
+	stk.Push(354);
+	stk.Push(15);
+	stk.Push(75);
+
+	stk.Print();
+
+	stk.Pop();
+	stk.Pop();
+	stk.Pop();
+
+	stk.Print();
+
+	std::cout << "Peek: " << stk.Peek() << "\n";
+	stk.Pop();
+
+	std::cout << "PeekAfterDelete: " << stk.Peek() << "\n\n";
+
+	stk.Print();
+	stk.Pop();
+
+	stk.Push(68);
+	std::cout << "PeekAfterPush: " << stk.Peek() << "\n";
+	stk.Push(31);
+	std::cout << "PeekAfterPush: " << stk.Peek() << "\n\n";
+
+	std::cout << "Size: " << stk.Size() << "\n\n";
+
+	stk.Print();
+
+	stk.Pop();
+	stk.Pop();
+	stk.Push(70);
+	stk.Push(15);
+	stk.Push(12489);
+
+	stk.Print();
+
+	std::cout << "StackSize: " << stk.Size() << "\n\n";
+
+}
 
 void QueueTest()
 {
@@ -73,12 +122,12 @@ void DoublyLinkedListTest()
 	ll.Append(3);
 	ll.Append(4);
 
-	ll.Print();
+	ll.PrintForward();
 
 	ll.Prepend(2);
 	ll.RemoveAtIndex(2);
 
-	ll.Print();
+	ll.PrintBackward();
 
 	ll.RemoveHead();
 	ll.RemoveTail();
@@ -86,7 +135,7 @@ void DoublyLinkedListTest()
 	ll.Prepend(5);
 	ll.Append(5);
 
-	ll.Print();
+	ll.PrintForward();
 
 	ll.RemoveAtIndex(1);
 	ll.RemoveAtIndex(1);
@@ -97,7 +146,7 @@ void DoublyLinkedListTest()
 	ll.Append(-400);
 	ll.Prepend(2);
 
-	ll.Print();
+	ll.PrintForward();
 }
 
 void DynamicArrayTest()

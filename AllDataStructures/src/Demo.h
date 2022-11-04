@@ -1,5 +1,7 @@
 #pragma once
 void DynamicArrayTest();
-void DoublyLinkedList();
+void DoublyLinkedListTest();
 void QueueTest();
+void StackTest();
+
 
